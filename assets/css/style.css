@@ -3872,6 +3872,24 @@ kbd {
     height: 1200px;
   }
 }
+@media (max-width: 350px) {
+  section[class*="ak-slider-hero-"]
+    .swiper-slide
+    .ak-hero.ak-style1
+    .hero-slider-info
+    .hero-main-title {
+    font-size: 44px;
+    line-height: 110%;
+  }
+  section[class*="ak-slider-hero-"]
+    .swiper-slide
+    .ak-hero.ak-style1
+    .hero-slider-info
+    .hero-main-title
+    .hero-main-title-1 {
+    font-size: 44px;
+  }
+}
 
 /*--------------------------------------------------------------
 14. Service
