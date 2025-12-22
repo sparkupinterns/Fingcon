@@ -2078,7 +2078,7 @@ kbd {
     position: relative;
   }
   .ak-nav .ak-nav_list ul {
-    width: 260px;
+    width: 360px;
     background-color: var(--body-bg-color);
     position: absolute;
     box-shadow: 0px 1px 2px 0px rgba(2, 0, 181, 0.1);

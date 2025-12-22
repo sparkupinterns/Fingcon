@@ -17,7 +17,7 @@
 
   <body>
     <!-- Preloader -->
-    <div id="preloader" class="preloader">
+    <!-- <div id="preloader" class="preloader">
       <div class="txt-loading">
         <div class="preloader-text">
           <img class="logo-icon" src="assets/img/logo-icon.svg" alt="logo" />
@@ -29,7 +29,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Preloader -->
 
     <!-- Start Header Section -->
@@ -45,7 +45,7 @@
             <div class="ak-main-header-center">
               <div class="ak-nav ak-medium">
                 <ul class="ak-nav_list">
-                  <li class="menu-item-has-children">
+                  <li>
                     <a href="index.html">Home</a>
                     <!-- <ul>
                       <li>
@@ -65,11 +65,27 @@
                   <li class="menu-item-has-children">
                     <a href="services.html">Services</a>
                     <ul>
+          
                       <li>
-                        <a href="services.html">Services</a>
+                        <a href="accounting-bookkeeping.html">Accounting and BookKeeping</a>
                       </li>
                       <li>
-                        <a href="service-details.html">Services Details</a>
+                        <a href="financial-statements.html">Financial Statements</a>
+                      </li>
+                      <li>
+                        <a href="payroll-processing.html">Payroll Processing</a>
+                      </li>
+                      <li>
+                        <a href="tax-services.html">Tax Services</a>
+                      </li>
+                      <li>
+                        <a href="business-analytics.html">Businness Analytics</a>
+                      </li>
+                      <li>
+                        <a href="business-setup.html">Business Setup</a>
+                      </li>
+                      <li>
+                        <a href="virtual-cfo.html">Virtual CFO</a>
                       </li>
                     </ul>
                   </li>
@@ -112,36 +128,38 @@
               </div>
             </div>
             <div class="ak-main-header-right">
-              <a href="contact.html" class="common-btn">
+               <a href="contact.html" class="common-btn style-2">
                 <span> Get Started</span>
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    viewBox="0 0 15 15"
-                    fill="none"
-                  >
-                    <g clip-path="url(#clip0_201_56456978)">
-                      <path
-                        d="M1.42236 6.99728H13.089M13.089 6.99728L7.48903 1.39728M13.089 6.99728L7.48903 12.5973"
-                        stroke="#030917"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_201_56456978">
-                        <rect
-                          width="14"
-                          height="14"
-                          fill="white"
-                          transform="translate(0.00927734)"
+               <span class="arrow-cricle">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        viewBox="0 0 10 10"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                          stroke="#030917"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        viewBox="0 0 10 10"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                          stroke="#030917"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
               </a>
             </div>
           </div>
@@ -358,7 +376,7 @@
           <form id="contactForm">
             <div class="form-inputs">
               <div class="type_1">
-                <label for="fullname" class="form-label">Your Name</label>
+                <label for="fullname" class="form-label">Your Name*</label>
                 <input
                   type="text"
                   name="fullname"
@@ -370,7 +388,7 @@
             </div>
             <div class="form-inputs">
               <div class="type_1">
-                <label for="YourPhone" class="form-label">Your Phone</label>
+                <label for="YourPhone" class="form-label">Your Phone*</label>
                 <input
                   type="tel"
                   name="phone"
@@ -392,9 +410,17 @@
               </div>
             </div>
             <div class="form-inputs">
-              <div class="type_1">
-                <label for="websiteInput" class="form-label">Website</label>
-                <select name="website" id="websiteInput" class="csame">
+             <div class="type_1">
+                <label for="websiteInput" class="form-label">Website*</label>
+                <input
+                  type="text"
+                  name="website"
+                  id="websiteInput"
+                  class="csame"
+                  placeholder="Write website url"
+                  required
+                />
+                <!-- <select name="website" id="websiteInput" class="csame">
                   <option
                     value=""
                     disabled
@@ -406,11 +432,19 @@
                   </option>
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
-                </select>
+                </select> -->
               </div>
               <div class="type_1">
-                <label for="budgetInput" class="form-label">Budget</label>
-                <select name="budget" id="budgetInput" class="csame">
+                <label for="budgetInput" class="form-label">Budget*</label>
+                <input
+                  type="text"
+                  name="budget"
+                  id="budgetInput"
+                  class="csame"
+                  placeholder="Write budget here..."
+                  required
+                />
+                <!-- <select name="budget" id="budgetInput" class="csame">
                   <option
                     value=""
                     disabled
@@ -422,7 +456,7 @@
                   </option>
                   <option value="1">Option 1</option>
                   <option value="2">Option 2</option>
-                </select>
+                </select> -->
               </div>
             </div>
             <div class="form-textarea">
@@ -440,36 +474,38 @@
               </div>
             </div>
             <div class="ak-height-40 ak-height-lg-40"></div>
-            <button type="submit" id="submit" class="common-btn border-0">
+            <button type="submit" id="submit" class="common-btn border-0 style-2">
               <span>Send Message</span>
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
-                  fill="none"
-                >
-                  <g clip-path="url(#clip0_201_978fsdf)">
-                    <path
-                      d="M1.42236 6.99728H13.089M13.089 6.99728L7.48903 1.39728M13.089 6.99728L7.48903 12.5973"
-                      stroke="#030917"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_201_978fsdf">
-                      <rect
-                        width="14"
-                        height="14"
-                        fill="white"
-                        transform="translate(0.00927734)"
-                      />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </span>
+               <span class="arrow-cricle">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        viewBox="0 0 10 10"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                          stroke="#030917"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="10"
+                        height="10"
+                        viewBox="0 0 10 10"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                          stroke="#030917"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
             </button>
           </form>
         </div>
@@ -691,9 +727,9 @@
                   <ul class="linek-all">
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="team.html">Our Advisor</a></li>
+                    <!-- <li><a href="team.html">Our Advisor</a></li> -->
                     <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="blog.html">Blog</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li> -->
                   </ul>
                 </div>
                 <div class="link-content">
