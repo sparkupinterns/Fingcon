@@ -256,87 +256,65 @@
                 </div>
 
                 <!-- Right Form -->
-                <div class="hero-form-box">
-                  <h3 style="padding-bottom: 20px">Get Free Consultation</h3>
+        <div class="hero-form-box">
+  <h3 style="padding-bottom: 20px">Get Free Consultation</h3>
 
-                  <form class="hero-form">
-                    <input type="text" placeholder="Your Name" required />
+  <form class="hero-form" id="consultForm" novalidate>
+    <input type="text" id="name" placeholder="Your Name" required />
+    <small class="error-text" id="nameError"></small>
 
-                    <!-- <div class="phone-input-wrapper">
-                      <select name="country-code" class="country-code">
-                        <option value="+1">🇺🇸 +1</option>
-                        <option value="+91" selected>🇮🇳 +91</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        
-                      </select>
-                      <input type="tel" placeholder="Phone Number" required />
-                    </div> -->
+    <input
+      id="phone"
+      type="tel"
+      class="phone-input"
+      placeholder="Phone Number"
+      maxlength="10"
+      required
+    />
+    <small class="error-text" id="phoneError"></small>
 
-                    <input
-                      id="phone"
-                      type="tel"
-                      class="phone-input"
-                      placeholder="Phone Number"
-                    />
+    <input type="email" id="email" placeholder="Email Address" required />
+    <small class="error-text" id="emailError"></small>
 
-                    <input type="email" placeholder="Email Address" required />
+    <select class="opt" id="service" required>
+      <option value="">Select Service</option>
+      <option>Accounting Services</option>
+      <option>Tax Services</option>
+      <option>Business Consulting</option>
+      <option>Full Outsourcing</option>
+    </select>
+    <small class="error-text" id="serviceError"></small>
 
-                    <select class="opt">
-                      <option value="">Select Service</option>
-                      <option>Accounting Services</option>
-                      <option>Tax Services</option>
-                      <option>Business Consulting</option>
-                      <option>Full Outsourcing</option>
-                    </select>
+    <!-- OTP Section -->
+    <div class="otp-wrapper">
+      <input
+        type="text"
+        id="otp"
+        maxlength="6"
+        placeholder="Enter OTP"
+        required
+        disabled
+      />
+      <button type="button" class="otp-btn" id="sendOtpBtn" disabled>
+        Send OTP
+      </button>
+    </div>
+    <small class="error-text" id="otpError"></small>
 
-                    <!-- OTP Section -->
-                    <div class="otp-wrapper">
-                      <input
-                        type="text"
-                        maxlength="6"
-                        placeholder="Enter OTP"
-                        required
-                      />
-                      <button type="button" class="otp-btn">Send OTP</button>
-                    </div>
+    <button type="submit" class="common-btn style-2">
+      <span>Submit Request</span>
+      <span class="arrow-cricle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9" stroke="#030917" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9" stroke="#030917" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </button>
+  </form>
+</div>
 
-                    <!-- <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div> -->
-
-                    <button type="submit" class="common-btn style-2">
-                      <span>Submit Request</span>
-                      <span class="arrow-cricle">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="10"
-                          height="10"
-                          viewBox="0 0 10 10"
-                          fill="none"
-                        >
-                          <path
-                            d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                            stroke="#030917"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="10"
-                          height="10"
-                          viewBox="0 0 10 10"
-                          fill="none"
-                        >
-                          <path
-                            d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                            stroke="#030917"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </form>
-                </div>
               </div>
             </div>
           </div>
@@ -2062,38 +2040,38 @@
             </div>
             <div class="ak-height-50 ak-height-lg-30"></div>
             <a href="contact.html" class="common-btn style-2">
-                <span> Get Started</span>
-                <span class="arrow-cricle">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                  >
-                    <path
-                      d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                      stroke="#030917"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                  >
-                    <path
-                      d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                      stroke="#030917"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
+              <span> Get Started</span>
+              <span class="arrow-cricle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <path
+                    d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                    stroke="#030917"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <path
+                    d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                    stroke="#030917"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
           </div>
           <div class="strategic-img">
             <img src="assets/img/strategic/sticky-2.png" alt="..." />
@@ -2138,38 +2116,38 @@
 
             <div class="ak-height-50 ak-height-lg-30"></div>
             <a href="contact.html" class="common-btn style-2">
-                <span> Get Started</span>
-                <span class="arrow-cricle">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                  >
-                    <path
-                      d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                      stroke="#030917"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="10"
-                    height="10"
-                    viewBox="0 0 10 10"
-                    fill="none"
-                  >
-                    <path
-                      d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
-                      stroke="#030917"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-              </a>
+              <span> Get Started</span>
+              <span class="arrow-cricle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <path
+                    d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                    stroke="#030917"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="none"
+                >
+                  <path
+                    d="M0.828613 5H9.16195M9.16195 5L5.16195 1M9.16195 5L5.16195 9"
+                    stroke="#030917"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </a>
           </div>
           <div class="strategic-img">
             <img src="assets/img/strategic/sticky-3.png.jpeg" alt="..." />
@@ -2953,6 +2931,150 @@
     <!-- End Video Popup -->
 
     <!-- Script -->
+    <!-- form validation -->
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const consultForm = document.getElementById("consultForm");
+  const nameInput = document.getElementById("name");
+  const phoneInput = document.getElementById("phone");
+  const emailInput = document.getElementById("email");
+  const serviceInput = document.getElementById("service");
+  const otpInput = document.getElementById("otp");
+  const sendOtpBtn = document.getElementById("sendOtpBtn");
+
+  const nameError = document.getElementById("nameError");
+  const phoneError = document.getElementById("phoneError");
+  const emailError = document.getElementById("emailError");
+  const serviceError = document.getElementById("serviceError");
+  const otpError = document.getElementById("otpError");
+
+  let generatedOtp = null;
+
+  // Phone input: numbers only, max 10 digits
+  phoneInput.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+  });
+
+  // Enable OTP button only if all fields are filled
+  function checkFieldsFilled() {
+    if (
+      nameInput.value.trim() &&
+      phoneInput.value.trim().length === 10 &&
+      emailInput.value.trim() &&
+      /\S+@\S+\.\S+/.test(emailInput.value.trim()) &&
+      serviceInput.value
+    ) {
+      sendOtpBtn.disabled = false;
+    } else {
+      sendOtpBtn.disabled = true;
+    }
+  }
+
+  [nameInput, phoneInput, emailInput, serviceInput].forEach((input) => {
+    input.addEventListener("input", checkFieldsFilled);
+  });
+
+  // Send OTP
+  sendOtpBtn.addEventListener("click", () => {
+    // Clear previous errors
+    nameError.textContent = "";
+    phoneError.textContent = "";
+    emailError.textContent = "";
+    serviceError.textContent = "";
+    otpError.textContent = "";
+
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      nameError.textContent = "Name is required";
+      valid = false;
+    }
+    if (!phoneInput.value.trim()) {
+      phoneError.textContent = "Phone is required";
+      valid = false;
+    } else if (phoneInput.value.trim().length !== 10) {
+      phoneError.textContent = "Phone must be 10 digits";
+      valid = false;
+    }
+    if (!emailInput.value.trim()) {
+      emailError.textContent = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
+      emailError.textContent = "Enter a valid email";
+      valid = false;
+    }
+    if (!serviceInput.value) {
+      serviceError.textContent = "Select a service";
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    console.log("OTP (demo):", generatedOtp);
+    alert("OTP sent to your phone");
+
+    otpInput.disabled = false;
+  });
+
+  // Form submit
+  consultForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Clear errors
+    nameError.textContent = "";
+    phoneError.textContent = "";
+    emailError.textContent = "";
+    serviceError.textContent = "";
+    otpError.textContent = "";
+
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      nameError.textContent = "Name is required";
+      valid = false;
+    }
+    if (!phoneInput.value.trim()) {
+      phoneError.textContent = "Phone is required";
+      valid = false;
+    } else if (phoneInput.value.trim().length !== 10) {
+      phoneError.textContent = "Phone must be 10 digits";
+      valid = false;
+    }
+    if (!emailInput.value.trim()) {
+      emailError.textContent = "Email is required";
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
+      emailError.textContent = "Enter a valid email";
+      valid = false;
+    }
+    if (!serviceInput.value) {
+      serviceError.textContent = "Select a service";
+      valid = false;
+    }
+    if (!otpInput.value.trim()) {
+      otpError.textContent = "OTP is required";
+      valid = false;
+    } else if (otpInput.value.trim().length !== 6) {
+      otpError.textContent = "OTP must be 6 digits";
+      valid = false;
+    } else if (otpInput.value.trim() !== generatedOtp) {
+      otpError.textContent = "Invalid OTP";
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    alert("Form submitted successfully 🎉");
+    consultForm.reset();
+    otpInput.disabled = true;
+    sendOtpBtn.disabled = true;
+  });
+});
+</script>
+
+
+
     <!-- intl-tel-input -->
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"></script>

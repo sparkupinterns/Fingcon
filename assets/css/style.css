@@ -6409,7 +6409,7 @@ kbd {
 .hero-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 10px;
 }
 
 .hero-form input,
@@ -6426,6 +6426,11 @@ kbd {
 
 .hero-form textarea {
   min-height: 100px;
+}
+.error-text {
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: left;
 }
 
 /* .hero-form button {
