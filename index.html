@@ -2935,85 +2935,84 @@
 
     <!-- Script -->
     <!-- form validation -->
-   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const consultForm = document.getElementById("consultForm");
-  const nameInput = document.getElementById("name");
-  const phoneInput = document.getElementById("phone");
-  const emailInput = document.getElementById("email");
-  const serviceInput = document.getElementById("service");
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const form = document.getElementById("consultForm");
+
+  const name = document.getElementById("name");
+  const phone = document.getElementById("phone");
+  const email = document.getElementById("email");
+  const service = document.getElementById("service");
+
   const nameError = document.getElementById("nameError");
   const phoneError = document.getElementById("phoneError");
   const emailError = document.getElementById("emailError");
   const serviceError = document.getElementById("serviceError");
   const captchaError = document.getElementById("captchaError");
 
-  // Phone input: numbers only, max 10 digits
-  phoneInput.addEventListener("input", () => {
-    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+  // Phone: numbers only
+  phone.addEventListener("input", () => {
+    phone.value = phone.value.replace(/\D/g, "").slice(0, 10);
   });
 
-  // Form submit
-  consultForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // 🔴 STOPS PAGE REFRESH
 
-    // Clear previous errors
+    // Clear errors
     nameError.textContent = "";
     phoneError.textContent = "";
     emailError.textContent = "";
     serviceError.textContent = "";
     captchaError.textContent = "";
 
+    let isValid = true;
 
-    let valid = true;
-
-    // Field validations
-    if (!nameInput.value.trim()) {
+    if (!name.value.trim()) {
       nameError.textContent = "Name is required";
-      valid = false;
+      isValid = false;
     }
 
-    if (!phoneInput.value.trim()) {
-      phoneError.textContent = "Phone is required";
-      valid = false;
-    } else if (phoneInput.value.trim().length !== 10) {
-      phoneError.textContent = "Phone must be 10 digits";
-      valid = false;
+    if (!phone.value || phone.value.length !== 10) {
+      phoneError.textContent = "Enter a valid 10-digit phone number";
+      isValid = false;
     }
 
-    if (!emailInput.value.trim()) {
-      emailError.textContent = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
-      emailError.textContent = "Enter a valid email";
-      valid = false;
+    if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
+      emailError.textContent = "Enter a valid email address";
+      isValid = false;
     }
 
-    if (!serviceInput.value) {
-      serviceError.textContent = "Select a service";
-      valid = false;
+    if (!service.value) {
+      serviceError.textContent = "Please select a service";
+      isValid = false;
     }
 
-    
+    // reCAPTCHA v2 check
     const captchaResponse = grecaptcha.getResponse();
-    if (captchaResponse.length === 0) {
-      captchaError.textContent = "Verify Captcha";
-      valid = false;
+    if (!captchaResponse) {
+      captchaError.textContent = "Please verify captcha";
+      isValid = false;
     }
 
-    if (!valid) return;
+    if (!isValid) return; // ❌ STOP SUBMIT
 
-    
+    // ✅ SUCCESS
     alert("Form submitted successfully 🎉");
-    consultForm.reset();
-    grecaptcha.reset(); 
+
+    form.reset();
+    grecaptcha.reset();
   });
+
 });
 </script>
 
 
+
 <!-- captcha -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LfX3j0sAAAAAKgzvEi6WAUOt1WKxtSZBDRPsbus"></script>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfX3j0sAAAAAKgzvEi6WAUOt1WKxtSZBDRPsbus"></script>
 
 <script>
 grecaptcha.ready(function() {
@@ -3021,7 +3020,7 @@ grecaptcha.ready(function() {
     document.getElementById("recaptchaToken").value = token;
   });
 });
-</script>
+</script> -->
 
 
 
@@ -3046,7 +3045,7 @@ grecaptcha.ready(function() {
         });
       }
     </script>
-    <script>
+    <!-- <script>
       const form = document.querySelector(".hero-form");
 
       form.addEventListener("submit", function (e) {
@@ -3056,7 +3055,7 @@ grecaptcha.ready(function() {
           <small class="error-text" id="captchaError"></small>
         }
       });
-    </script>
+    </script> -->
 
     <!-- Other JS files -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -3071,7 +3070,6 @@ grecaptcha.ready(function() {
     <script src="assets/js/plugins/scrolltoplugins.js"></script>
 
     <script src="assets/js/main.js"></script>
-      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   </body>
 </html>
