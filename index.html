@@ -256,7 +256,7 @@
                 </div>
 
                 <!-- Right Form -->
-        <div class="hero-form-box">
+         <div class="hero-form-box">
   <h3 style="padding-bottom: 20px">Get Free Consultation</h3>
 
   <form class="hero-form" id="consultForm" novalidate>
@@ -286,7 +286,7 @@
     <small class="error-text" id="serviceError"></small>
 
     <!-- OTP Section -->
-    <div class="otp-wrapper">
+    <!-- <div class="otp-wrapper">
       <input
         type="text"
         id="otp"
@@ -299,7 +299,10 @@
         Send OTP
       </button>
     </div>
-    <small class="error-text" id="otpError"></small>
+    <small class="error-text" id="otpError"></small> -->
+    <div class="g-recaptcha" data-sitekey="6Le_4T0sAAAAAPTYFrgyahVjeJGnKnhCeKRC-TdF"></div>
+    <input type="hidden" id="recaptchaToken" name="recaptchaToken">
+    <small class="error-text" id="captchaError"></small>
 
     <button type="submit" class="common-btn style-2">
       <span>Submit Request</span>
@@ -2939,56 +2942,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneInput = document.getElementById("phone");
   const emailInput = document.getElementById("email");
   const serviceInput = document.getElementById("service");
-  const otpInput = document.getElementById("otp");
-  const sendOtpBtn = document.getElementById("sendOtpBtn");
-
   const nameError = document.getElementById("nameError");
   const phoneError = document.getElementById("phoneError");
   const emailError = document.getElementById("emailError");
   const serviceError = document.getElementById("serviceError");
-  const otpError = document.getElementById("otpError");
-
-  let generatedOtp = null;
+  const captchaError = document.getElementById("captchaError");
 
   // Phone input: numbers only, max 10 digits
   phoneInput.addEventListener("input", () => {
     phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
   });
 
-  // Enable OTP button only if all fields are filled
-  function checkFieldsFilled() {
-    if (
-      nameInput.value.trim() &&
-      phoneInput.value.trim().length === 10 &&
-      emailInput.value.trim() &&
-      /\S+@\S+\.\S+/.test(emailInput.value.trim()) &&
-      serviceInput.value
-    ) {
-      sendOtpBtn.disabled = false;
-    } else {
-      sendOtpBtn.disabled = true;
-    }
-  }
+  // Form submit
+  consultForm.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  [nameInput, phoneInput, emailInput, serviceInput].forEach((input) => {
-    input.addEventListener("input", checkFieldsFilled);
-  });
-
-  // Send OTP
-  sendOtpBtn.addEventListener("click", () => {
     // Clear previous errors
     nameError.textContent = "";
     phoneError.textContent = "";
     emailError.textContent = "";
     serviceError.textContent = "";
-    otpError.textContent = "";
+    captchaError.textContent = "";
+
 
     let valid = true;
 
+    // Field validations
     if (!nameInput.value.trim()) {
       nameError.textContent = "Name is required";
       valid = false;
     }
+
     if (!phoneInput.value.trim()) {
       phoneError.textContent = "Phone is required";
       valid = false;
@@ -2996,6 +2980,7 @@ document.addEventListener("DOMContentLoaded", () => {
       phoneError.textContent = "Phone must be 10 digits";
       valid = false;
     }
+
     if (!emailInput.value.trim()) {
       emailError.textContent = "Email is required";
       valid = false;
@@ -3003,72 +2988,37 @@ document.addEventListener("DOMContentLoaded", () => {
       emailError.textContent = "Enter a valid email";
       valid = false;
     }
+
     if (!serviceInput.value) {
       serviceError.textContent = "Select a service";
       valid = false;
     }
 
-    if (!valid) return;
-
-    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    console.log("OTP (demo):", generatedOtp);
-    alert("OTP sent to your phone");
-
-    otpInput.disabled = false;
-  });
-
-  // Form submit
-  consultForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Clear errors
-    nameError.textContent = "";
-    phoneError.textContent = "";
-    emailError.textContent = "";
-    serviceError.textContent = "";
-    otpError.textContent = "";
-
-    let valid = true;
-
-    if (!nameInput.value.trim()) {
-      nameError.textContent = "Name is required";
-      valid = false;
-    }
-    if (!phoneInput.value.trim()) {
-      phoneError.textContent = "Phone is required";
-      valid = false;
-    } else if (phoneInput.value.trim().length !== 10) {
-      phoneError.textContent = "Phone must be 10 digits";
-      valid = false;
-    }
-    if (!emailInput.value.trim()) {
-      emailError.textContent = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(emailInput.value.trim())) {
-      emailError.textContent = "Enter a valid email";
-      valid = false;
-    }
-    if (!serviceInput.value) {
-      serviceError.textContent = "Select a service";
-      valid = false;
-    }
-    if (!otpInput.value.trim()) {
-      otpError.textContent = "OTP is required";
-      valid = false;
-    } else if (otpInput.value.trim().length !== 6) {
-      otpError.textContent = "OTP must be 6 digits";
-      valid = false;
-    } else if (otpInput.value.trim() !== generatedOtp) {
-      otpError.textContent = "Invalid OTP";
+    
+    const captchaResponse = grecaptcha.getResponse();
+    if (captchaResponse.length === 0) {
+      captchaError.textContent = "Verify Captcha";
       valid = false;
     }
 
     if (!valid) return;
 
+    
     alert("Form submitted successfully 🎉");
     consultForm.reset();
-    otpInput.disabled = true;
-    sendOtpBtn.disabled = true;
+    grecaptcha.reset(); 
+  });
+});
+</script>
+
+
+<!-- captcha -->
+<script src="https://www.google.com/recaptcha/api.js?render=6LfX3j0sAAAAAKgzvEi6WAUOt1WKxtSZBDRPsbus"></script>
+
+<script>
+grecaptcha.ready(function() {
+  grecaptcha.execute('6LfX3j0sAAAAAKgzvEi6WAUOt1WKxtSZBDRPsbus', {action: 'submit'}).then(function(token) {
+    document.getElementById("recaptchaToken").value = token;
   });
 });
 </script>
@@ -3103,7 +3053,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const recaptcha = grecaptcha.getResponse();
         if (recaptcha.length === 0) {
           e.preventDefault();
-          alert("Please verify that you are not a robot.");
+          <small class="error-text" id="captchaError"></small>
         }
       });
     </script>
@@ -3121,5 +3071,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <script src="assets/js/plugins/scrolltoplugins.js"></script>
 
     <script src="assets/js/main.js"></script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   </body>
 </html>
